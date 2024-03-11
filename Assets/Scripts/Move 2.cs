@@ -40,7 +40,7 @@ public class Move2 : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Terrian")
+        if (collision.gameObject.tag != "Terrian")
         {
             Jump = false;
             isGrounded = false;
