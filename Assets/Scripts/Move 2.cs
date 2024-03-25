@@ -13,6 +13,8 @@ public class Move2 : MonoBehaviour
 
     void Start()
     {
+        Jump = false;
+        isGrounded = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,7 +33,7 @@ public class Move2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Terrian")
+        if (collision.gameObject.tag == "ground")
         {
             Jump = true;
             isGrounded = true;
@@ -40,7 +42,7 @@ public class Move2 : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Terrian")
+        if (collision.gameObject.tag == "ground")
         {
             Jump = false;
             isGrounded = false;
