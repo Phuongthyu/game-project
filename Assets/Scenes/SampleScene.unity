@@ -274,12 +274,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77965313}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.774, z: 0.032200117}
-  m_LocalScale: {x: 0.29219, y: 0.27906, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.71483976, w: 0.69928837}
+  m_LocalPosition: {x: -0.26258284, y: -0.21049081, z: 0}
+  m_LocalScale: {x: 0.06262457, y: 0.05009302, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2031079971}
+  m_Father: {fileID: 442633044}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!233 &77965315
 HingeJoint2D:
@@ -516,12 +516,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83537981}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.004, z: 0.032200117}
-  m_LocalScale: {x: 0.2921875, y: 0.27906248, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.71483976, w: 0.69928837}
+  m_LocalPosition: {x: 0.16073579, y: -0.24231496, z: 0}
+  m_LocalScale: {x: 0.060766336, y: 0.052773383, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2031079971}
+  m_Father: {fileID: 618891226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &222741256
 GameObject:
@@ -1472,7 +1472,8 @@ Transform:
   m_LocalPosition: {x: -70.448105, y: -2.1176825, z: 0.1616611}
   m_LocalScale: {x: 5.5712748, y: 4.665302, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 77965314}
   m_Father: {fileID: 1953959837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!233 &442633047
@@ -1491,7 +1492,7 @@ HingeJoint2D:
   m_BreakAction: 2
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.23757914, y: -0.21443623}
-  m_ConnectedAnchor: {x: -0.073464006, y: -0.4976159}
+  m_ConnectedAnchor: {x: -0.073464006, y: -0.49761584}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
@@ -1978,7 +1979,8 @@ Transform:
   m_LocalPosition: {x: -76.53811, y: -2.017685, z: 0.1616611}
   m_LocalScale: {x: 5.288172, y: 4.808146, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 83537985}
   m_Father: {fileID: 1953959837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &618891227
@@ -2103,7 +2105,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.0000024604485, y: 1.0000005}
-  m_ConnectedAnchor: {x: 0.000001988946, y: -0.78815234}
+  m_ConnectedAnchor: {x: 0.000001988946, y: -0.7881524}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -71969,15 +71971,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 83537985}
   - {fileID: 643430617}
   - {fileID: 1800634417}
+  - {fileID: 1328464008}
   - {fileID: 1466875378}
   - {fileID: 2124609439}
   - {fileID: 2033957963}
   - {fileID: 389379740}
-  - {fileID: 77965314}
-  - {fileID: 1328464008}
   m_Father: {fileID: 1953959837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91.26}
 --- !u!50 &2031079972
