@@ -60,18 +60,5 @@ public class MovingPlatform : MonoBehaviour
         yield return new WaitForSeconds(waitDuration);
         speedMutiplier = 1;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if( collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player1") && collision.CompareTag("Player2"))
-        {
-            collision.transform.parent= this.transform;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player1") || collision.CompareTag("Player2") || collision.CompareTag("Player1") && collision.CompareTag("Player2"))
-        {
-            collision.transform.parent = null;
-        }
-    }
+    
 }

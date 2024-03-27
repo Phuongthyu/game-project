@@ -8,6 +8,8 @@ TagManager:
   - Player1
   - Player2
   - ground
+  - Chain
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

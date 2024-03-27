@@ -10,6 +10,7 @@ public class Move2 : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private object platform;
 
     void Start()
     {
@@ -33,11 +34,12 @@ public class Move2 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "ground")
+        if (collision.gameObject.tag == "ground" )
         {
             Jump = true;
             isGrounded = true;
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -47,5 +49,6 @@ public class Move2 : MonoBehaviour
             Jump = false;
             isGrounded = false;
         }
+
     }
 }
