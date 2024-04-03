@@ -10,6 +10,8 @@ TagManager:
   - ground
   - Chain
   - MovingPlatform
+  - Teleport
+  - Teleporter
   layers:
   - Default
   - TransparentFX

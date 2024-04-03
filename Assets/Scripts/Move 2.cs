@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move2 : MonoBehaviour
 {
+    private GameObject currentTeleporter;
     public float speed;
     public float jumpForce;
     public bool Jump;
@@ -14,6 +15,7 @@ public class Move2 : MonoBehaviour
 
     void Start()
     {
+        
         Jump = false;
         isGrounded = false;
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +31,14 @@ public class Move2 : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0); // Đặt vận tốc y về 0 trước khi nhảy
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (currentTeleporter != null)
+            {
+                transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
+            }
         }
     }
 
@@ -50,5 +60,24 @@ public class Move2 : MonoBehaviour
             isGrounded = false;
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+        {
+            currentTeleporter = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+        {
+            if (collision.gameObject == currentTeleporter)
+            {
+                currentTeleporter = null;
+            }
+        }
     }
 }

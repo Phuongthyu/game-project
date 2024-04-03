@@ -43,15 +43,15 @@ public class MovingPlatform : MonoBehaviour
     }
     void NextPoint()
     {
-        if (point == pointAmount)
-        {
-            direction = -1;
-        }
-        if (point == 0)
-        {
-            direction = 1;
-        }
         point += direction;
+
+        // Kiểm tra xem point có vượt quá giới hạn của mảng không
+        if (point >= pointAmount || point < 0)
+        {
+            direction *= -1; // Đảo hướng di chuyển
+            point = Mathf.Clamp(point, 0, pointAmount - 1); // Đảm bảo point nằm trong giới hạn của mảng
+        }
+
         DesPoint = waypoints[point].transform.position;
     }
     IEnumerable WaitPoint()
