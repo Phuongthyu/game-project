@@ -12,7 +12,7 @@ public class Move : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     public bool isOnPlatform;
-    private Rigidbody2D platform;
+    public Rigidbody2D platform;
 
     void Start()
     {

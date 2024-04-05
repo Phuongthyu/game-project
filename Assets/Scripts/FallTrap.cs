@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallTrap : MonoBehaviour
 {
-    Rigidbody2D rg;
+    [SerializeField] private Rigidbody2D rg;
     // Start is called before the first frame update
     void Start()
     {

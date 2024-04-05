@@ -11,7 +11,9 @@ public class Move2 : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
-    private object platform;
+    public bool isOnPlatform;
+    public Rigidbody2D platform;
+  
 
     void Start()
     {
@@ -25,7 +27,14 @@ public class Move2 : MonoBehaviour
     {
         float h_move = Input.GetAxis("Player2_Horizontal");
 
-        rb.velocity = new Vector2(h_move * speed, rb.velocity.y);
+        if (isOnPlatform)
+        {
+            rb.velocity = new Vector2((h_move * speed) + platform.velocity.x, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(h_move * speed, rb.velocity.y);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && Jump && isGrounded)
         {
