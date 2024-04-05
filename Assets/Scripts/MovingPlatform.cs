@@ -101,7 +101,7 @@ public class MovingPlatform : MonoBehaviour
             //move.isOnPlatform = false;
 
             //move2.isOnPlatform = false;
-            collision.transform.SetParent(null); ;
+            collision.transform.SetParent(null); 
         }
     }
 
