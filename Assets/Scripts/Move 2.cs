@@ -13,7 +13,8 @@ public class Move2 : MonoBehaviour
     private bool isGrounded;
     public bool isOnPlatform;
     public Rigidbody2D platform;
-  
+
+    
 
     void Start()
     {
@@ -49,6 +50,8 @@ public class Move2 : MonoBehaviour
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
             }
         }
+
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

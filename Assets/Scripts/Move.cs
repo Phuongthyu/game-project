@@ -14,6 +14,11 @@ public class Move : MonoBehaviour
     public bool isOnPlatform;
     public Rigidbody2D platform;
 
+    //shooting
+    public ShootingMana ProjectilePrefab;
+    public Transform LaunchOffset;
+
+
     void Start()
     {
        
@@ -49,6 +54,12 @@ public class Move : MonoBehaviour
             {
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
             }
+        }
+
+        // shooting
+        if (Input.GetKeyDown(KeyCode.DownArrow  ))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
         }
     }
 

@@ -12,6 +12,9 @@ TagManager:
   - MovingPlatform
   - Teleport
   - Teleporter
+  - Star
+  - Key
+  - Enemy
   layers:
   - Default
   - TransparentFX

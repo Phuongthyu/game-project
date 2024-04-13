@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,8 @@ public class DoorBehaviour : MonoBehaviour
     void Awake()
     {
         _doorClosedPos = transform.position;
-        _doorOpenPos = new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z);
+        //muốn thanh xa hơn thì đổi số
+        _doorOpenPos = new Vector3(transform.position.x - 50f, transform.position.y, transform.position.z); // Thay đổi hướng di chuyển sang trái
     }
 
     // Update is called once per frame
