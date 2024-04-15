@@ -9,6 +9,7 @@ public class EnemyPatrol : MonoBehaviour
     private Rigidbody2D rb;
     private Transform currentPoint;
     public float speed;
+    public int damage;
 
     void Start()
     {
@@ -20,16 +21,16 @@ public class EnemyPatrol : MonoBehaviour
     void Update()
     {
         Vector2 point = currentPoint.position - transform.position;
-        if(currentPoint == PointB.transform)
+        if (currentPoint == PointB.transform)
         {
             rb.velocity = new Vector2(speed, 0);
-        }  
+        }
         else
         {
             rb.velocity = new Vector2(-speed, 0);
-        }  
-        
-        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointB.transform)
+        }
+
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == PointB.transform)
         {
             flip();
             currentPoint = PointA.transform;
@@ -48,6 +49,8 @@ public class EnemyPatrol : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+    
 
     private void OnDrawGizmos()
     {

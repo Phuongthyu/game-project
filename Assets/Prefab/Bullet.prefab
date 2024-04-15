@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7499723671346433352}
   - component: {fileID: -5742147591864460525}
   - component: {fileID: 3034620553100350213}
-  - component: {fileID: -6015864191145958607}
   - component: {fileID: 691792054604698300}
   m_Layer: 0
   m_Name: Bullet
@@ -128,7 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058557ba3b21ac74190e021f55a4f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health1: {fileID: 0}
+  health2: {fileID: 0}
   force: 5
+  damage: 15
 --- !u!61 &3034620553100350213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,21 +176,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20073748, y: 0.16773733}
   m_EdgeRadius: 0
---- !u!114 &-6015864191145958607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795252283298855737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3339db42278d5cf46b62ecf3b08b5012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  healthBar1: {fileID: 0}
-  healthBar2: {fileID: 0}
 --- !u!58 &691792054604698300
 CircleCollider2D:
   m_ObjectHideFlags: 0

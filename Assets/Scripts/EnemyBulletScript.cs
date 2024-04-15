@@ -8,7 +8,9 @@ public class EnemyBulletScript : MonoBehaviour
     private GameObject player2;
     private Rigidbody2D rb;
     private Rigidbody2D rb2;
+    public PlayerHealth health1, health2;
     public float force;
+    public int damage;
     private float timer;
     
 
@@ -41,24 +43,36 @@ public class EnemyBulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        //timer += Time.deltaTime;
 
         //nếu viên đạn ở lâu hơn số thời gian đưa ra thì viên đạn sẽ bị phá hủy
-        if (timer > 15)
-        {
-            Destroy(gameObject);
-        }
+       // if (timer > 15)
+       // {
+            //Destroy(gameObject);
+       // }
     }
 
     // viên đạn sẽ bị phá hủy nếu va chạm với người chơi
      private void OnTriggerEnter2D(Collider2D other)
      {
-         if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+         if (other.gameObject.CompareTag("Player1") )
          {
+            health1.GetDamage(damage);
+           
+
             //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
             Destroy(gameObject);
-         }    
-     }
+         }
+        if (other.gameObject.CompareTag("Player2"))
+        {
+            health2.GetDamage(damage);
+
+
+            //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
+            Destroy(gameObject);
+        }
+
+    }
    
 
   

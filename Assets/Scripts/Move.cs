@@ -48,13 +48,7 @@ public class Move : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (currentTeleporter != null)
-            {
-                transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
-            }
-        }
+        
 
         // shooting
         if (Input.GetKeyDown(KeyCode.DownArrow  ))

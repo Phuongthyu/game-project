@@ -29,7 +29,7 @@ public class EnemyShooting : MonoBehaviour
         Debug.Log(distance2);
 
         // khoang cach lai gan dan se dc ban và hết thời gian giữa các lần bắn
-        if (distance < 200 || distance2 < 200)
+        if (distance < 30 || distance2 < 30)
         {
             timer += Time.deltaTime;
 
