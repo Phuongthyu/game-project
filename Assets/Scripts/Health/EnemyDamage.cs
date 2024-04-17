@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
@@ -7,24 +8,15 @@ public class EnemyDamage : MonoBehaviour
     public int damage;
     public PlayerHealth health1, health2;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Player1"))
+        if (collision.gameObject.tag.Equals("Player1"))
         {
             health1.GetDamage(damage);
-
-
-            //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
-            
         }
-        if (other.gameObject.CompareTag("Player2"))
+        if (collision.gameObject.tag.Equals("Player2"))
         {
             health2.GetDamage(damage);
-
-
-            //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
-           
         }
-
     }
 }
