@@ -71,6 +71,16 @@ public class EnemyBulletScript : MonoBehaviour
             //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
             Destroy(gameObject);
         }
+        if (other.gameObject.CompareTag("Shield"))
+        {
+            
+
+
+            //other.gameObject.GetComponent<playerHealth>.health = -20; ( khusc 11:52 trong vid)
+            Destroy(gameObject);
+        }
+
+
 
     }
    

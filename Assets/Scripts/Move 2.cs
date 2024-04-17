@@ -13,12 +13,18 @@ public class Move2 : MonoBehaviour
     private bool isGrounded;
     public bool isOnPlatform;
     public Rigidbody2D platform;
+    public PlayerHealth player1 ,player2 ;
+
+    //shield
+    private bool shielded;
+    [SerializeField] private GameObject shield;
 
     
 
     void Start()
     {
-        
+        shielded = false;
+
         Jump = false;
         isGrounded = false;
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +32,8 @@ public class Move2 : MonoBehaviour
 
     void Update()
     {
+        CheckShield();
+
         float h_move = Input.GetAxis("Player2_Horizontal");
 
         if (isOnPlatform)
@@ -43,11 +51,35 @@ public class Move2 : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
+        //Shield
         
 
+        
             
     }
+    public void CheckShield()
+    {
+        if (Input.GetKey(KeyCode.E) && !shielded)
+        {
+            shield.SetActive(true);
+            shielded = true;
 
+            // code for turning off shield
+            Invoke("NoShield", 3f); // thời gian có khiên
+        }
+    }
+    public void NoShield()
+    {
+        shield.SetActive(false);
+        shielded = false;
+    }
+
+    public bool IsShielded()
+    {
+        player1.GetDamage(0);
+        player2.GetDamage(0);
+        return shielded;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ground" )

@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int currHP;
     public Healthbar healthBar;
     public static bool GameOver;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +30,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void GetDamage(int damage) 
     {
-        currHP -= damage;
-        healthBar.SetHealth(currHP);
-        if (currHP <= 0 )    
-        {
-            GameOver=true;
-        }
+       
+
+            currHP -= damage;
+            healthBar.SetHealth(currHP);
+            if (currHP <= 0)
+            {
+                GameOver = true;
+            }
+        
     }
 
     public void AddHealth(int value)

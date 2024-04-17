@@ -15,6 +15,7 @@ TagManager:
   - Star
   - Key
   - Enemy
+  - Shield
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 

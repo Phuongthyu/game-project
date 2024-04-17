@@ -18,10 +18,14 @@ public class Move : MonoBehaviour
     public ShootingMana ProjectilePrefab;
     public Transform LaunchOffset;
 
+    
+
 
     void Start()
     {
-       
+
+        
+
         Jump = false;
         isGrounded = false;
         rb = GetComponent<Rigidbody2D>();
@@ -30,6 +34,8 @@ public class Move : MonoBehaviour
    
     void Update()
     {
+        
+
         float h_move = Input.GetAxis("Player1_Horizontal");
 
         
