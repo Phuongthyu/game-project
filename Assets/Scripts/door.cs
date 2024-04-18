@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,7 +34,14 @@ public class door : MonoBehaviour
         {
             anim.SetTrigger("Open");
             locked = false;
+            StartCoroutine(LoadNextScene());
         }
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(1f); // Thời gian chờ trước khi load scene mới (có thể điều chỉnh)
+        SceneManager.LoadScene("Level_2"); // Thay "TênSceneMới" bằng tên của scene mới
     }
 
     private void OnTriggerExit2D(Collider2D other)
