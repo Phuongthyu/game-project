@@ -6,17 +6,27 @@ public class EnemyRabbit : MonoBehaviour
 {
     [SerializeField] private float radio;
     [SerializeField] private float fuerzaExplosion;
+    public GameObject ExporeEffect;
+    public PlayerHealth health1, health2;
+    public int damage;
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.W))
+       
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag.Equals("Player1") || collision.gameObject.tag.Equals("Player2"))
         {
+            health1.GetDamage(damage);
+            health2.GetDamage(damage);
             Explosion();
         }
     }
 
     public void Explosion()
     {
+        Instantiate(ExporeEffect, transform.position, Quaternion.identity);
         Collider2D[] objetos = Physics2D.OverlapCircleAll(transform.position, radio);
 
         foreach (Collider2D colisionador in objetos)
@@ -30,6 +40,7 @@ public class EnemyRabbit : MonoBehaviour
                 rb2D.AddForce(direccion * fuerzaFinal);
             }
         }
+        Destroy(gameObject);
     }
     
 
