@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,8 +36,7 @@ public class KeyManager : MonoBehaviour
         if (other.gameObject.CompareTag("Player1") && !isPickedUp || other.gameObject.CompareTag("Player2") && !isPickedUp)
         {
             isPickedUp = true;
-            door.GetComponent<door>().keyPickedUp = true;
-        }
+            door.GetComponent<door>().keyPickedUp = true;        }
     }
 
     private void OnDrawGizmos()

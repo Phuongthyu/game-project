@@ -7,7 +7,7 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Player1_Horizontal
-    descriptiveName: Player1 Horizontal
+    descriptiveName: Player1_Horizontal
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
@@ -99,7 +99,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 0
-    axis: 0
+    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse X
@@ -151,7 +151,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Player2_Horizontal
-    descriptiveName: Player2 Horizontal
+    descriptiveName: Player2_Horizontal
     descriptiveNegativeName: 
     negativeButton: a
     positiveButton: d
